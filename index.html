@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Love You by AlexDev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Love You</title>
     <link rel="icon" type="image/x-icon" href="Love_files/icon.png">
     <meta name="language" content="es-ES">
-    <meta name="title" content="title">
     <link type="text/css" rel="stylesheet" href="./Love_files/default.css">
     <script type="text/javascript" src="./Love_files/jquery.min.js"></script>
     <script type="text/javascript" src="./Love_files/jscex.min.js"></script>
@@ -18,75 +19,78 @@
     <script type="text/javascript" src="./Love_files/love.js" charset="utf-8"></script>
 </head>
 
- <!-- 
-
-Contáctame:
-
-    * Invitame un café
- https://buymeacoffee.com/alexx.dev
-
-    * Portafolio Web
- https://alexxdev.vercel.app
-
-    * Sigueme en tiktok
- https://www.tiktok.com/@alexx.dev?is_from_webapp=1&sender_device=pc 
- 
-    *Canal de WhatsApp
- https://whatsapp.com/channel/0029VazQEXq90x2vIdNkrH1p
-
- 
- WhatsApp: +52 1 55 6628 1018
-
--->
-
 <body>
     <div id="main">
         <div id="error">
-            Tu navegador que estás usando no es compatible con el contenido que se va a mostrar. 
-            Por favor, usa Google (<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>) 
-            o Firefox (<a href="http://firefox.com.cn/download/">Firefox</a>)~
+            Tu navegador que estás usando no es compatible. Por favor, usa Chrome o Firefox.
         </div>
 
-        <div id="wrap">
-            <div id="text">
-                <div id="code">
-                    <span class="say">Para el amor de mi vida:</span><br><br>
-                    <span class="say">Somos muy jovenes para prometer un para siempre</span><br>
-                    <span class="say">Pero si eliges caminar esta vida conmigo</span><br>
-                    <span class="say">Te daré toda mi lealtad y el amor que tengo.</span><br>
-                    <span class="say">Quiero amarte por todas las veces que un día mi corazón esperó sin saber que latía por ti.</span><br>
-                    <span class="say"><span class="space"></span> — Te amo Antonella Polette Hormazabal Barrientos </span><br>
+        <div id="wrap-container">
+            <div id="wrap">
+                <div id="text">
+                    <div id="code">
+                        <span class="say">XXXXXXXXXXX</span><br><br>
+                        <span class="say">XXXXXXXXX</span><br>
+                        <span class="say">XXXXXXXXXXXX</span><br>
+                        <span class="say">Este texto es solo un ejemplo de demostración.</span>
+                        <span class="say"><span class="space"></span> XXXXX</span>
+                    </div>
                 </div>
-            </div><br>
-            <br>
-            <div id="clock-box">
-                <a href="https://alexxdev.vercel.app/" target="_blank">Desde que decidimos ser</a>
-                <a href="https://alexxdev.vercel.app/" target="_blank">nosotros</a> han pasado...
-                <div id="clock"></div>
+                <div id="clock-box">
+                    <a href="#" target="_blank">Mi amor</a>
+                    <a href="#" target="_blank">por ti</a> comenzó hace...
+                    <div id="clock"></div>
+                </div>
+
+                <canvas id="canvas" width="1100" height="680"></canvas>
             </div>
-
-            <canvas id="canvas" width="1100" height="680"></canvas>
         </div>
+
+      <div id="photo-gallery">
+    <h3>GALERÍA</h3>
+    <p style="font-size: 14px; color: #be1a25; margin-top: -20px; margin-bottom: 20px;">(Toca las fotosss)</p>
+    <div class="gallery-container">
+        <img src="img/7.jpg" class="gallery-photo" alt="Foto 1" data-mensaje="El comienzo de todo.">
+        <img src="img/8.jpg" class="gallery-photo" alt="Foto 2" data-mensaje="Tu sonrisa es mi lugar favorito.">
+        <img src="img/11.jpg" class="gallery-photo" alt="Foto 3" data-mensaje="Caminando siempre de la mano.">
+        <img src="img/32.jpg" class="gallery-photo" alt="Foto 4" data-mensaje="Momentos que se quedan en el alma.">
+        <img src="img/33.jpg" class="gallery-photo" alt="Foto 5" data-mensaje="Gracias por ser mi paz.">
+        <img src="img/35.jpg" class="gallery-photo" alt="Foto 6" data-mensaje="Te amo hoy y siempre.">
     </div>
+</div>
+
+        <div id="photo-modal">
+            <span id="modal-close">&times;</span>
+            <img id="modal-img" src="">
+            <div id="modal-caption"></div>
+        </div>
+
+    </div>
+    
     <script src="script.js"></script>
+
+    <script>
+        window.currentScale = 1;
+
+        function adaptarPantalla() {
+            var wrap = document.getElementById('wrap');
+            var wrapContainer = document.getElementById('wrap-container');
+            var windowWidth = window.innerWidth;
+            
+            var scale = windowWidth / 1100;
+            if (scale > 1) scale = 1; 
+            
+            window.currentScale = scale;
+            
+            wrap.style.transform = 'scale(' + scale + ')';
+            wrapContainer.style.width = (1100 * scale) + 'px';
+            wrapContainer.style.height = (680 * scale) + 'px';
+            wrapContainer.style.marginTop = scale < 1 ? '20px' : '100px';
+        }
+
+        window.addEventListener('resize', adaptarPantalla);
+        window.addEventListener('load', adaptarPantalla);
+        setTimeout(adaptarPantalla, 500);
+    </script>
 </body>
-
- <!-- 
-
-Contáctame:
-
-    * Invitame un café
- https://buymeacoffee.com/alexx.dev
-
-    * Portafolio Web
- https://alexxdev.vercel.app
-
-    * Sigueme en tiktok
- https://www.tiktok.com/@alexx.dev?is_from_webapp=1&sender_device=pc 
- 
-    *Canal de WhatsApp
- https://whatsapp.com/channel/0029VazQEXq90x2vIdNkrH1p
-
--->
-
 </html>
