@@ -35,17 +35,21 @@
     var foot = tree.footer;
     var hold = 1;
 
-    canvas.click(function (e) {
+    canvas.on("click touchstart", function (e) {
         var offset = canvas.offset(), x, y;
         var scale = window.currentScale || 1;
+        var ev = e.originalEvent.touches ? e.originalEvent.touches[0] : e;
         x = (e.pageX - offset.left) / scale;
         y = (e.pageY - offset.top) / scale;
         
         if (seed.hover(x, y)) {
             hold = 0;
-            canvas.unbind("click");
+            canvas.unbind("click touchstart");
             canvas.unbind("mousemove");
             canvas.removeClass('hand');
+
+            var player = document.getElementById('player');
+            if(player) player.play();
         }
     }).mousemove(function (e) {
         var offset = canvas.offset(), x, y;
